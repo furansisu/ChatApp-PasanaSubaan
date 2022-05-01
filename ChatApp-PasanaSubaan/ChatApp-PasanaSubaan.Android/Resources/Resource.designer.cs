@@ -11799,14 +11799,20 @@ namespace ChatApp_PasanaSubaan.Droid
 			// aapt resource value: 0x7F070093
 			public const int ProfileIcon = 2131165331;
 			
-			// aapt resource value: 0x7F070094
-			public const int test_custom_background = 2131165332;
-			
 			// aapt resource value: 0x7F070095
-			public const int tooltip_frame_dark = 2131165333;
+			public const int splashscreen = 2131165333;
+			
+			// aapt resource value: 0x7F070094
+			public const int splash_logo = 2131165332;
 			
 			// aapt resource value: 0x7F070096
-			public const int tooltip_frame_light = 2131165334;
+			public const int test_custom_background = 2131165334;
+			
+			// aapt resource value: 0x7F070097
+			public const int tooltip_frame_dark = 2131165335;
+			
+			// aapt resource value: 0x7F070098
+			public const int tooltip_frame_light = 2131165336;
 			
 			static Drawable()
 			{
@@ -14473,6 +14479,9 @@ namespace ChatApp_PasanaSubaan.Droid
 			
 			// aapt resource value: 0x7F0F0115
 			public const int ShapeAppearance_MaterialComponents_Tooltip = 2131689749;
+			
+			// aapt resource value: 0x7F0F02BF
+			public const int splashscreen = 2131690175;
 			
 			// aapt resource value: 0x7F0F012A
 			public const int TestStyleWithLineHeight = 2131689770;
