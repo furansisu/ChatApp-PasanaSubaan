@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace ChatApp_PasanaSubaan
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChatPage : ContentPage
+public partial class ConversationPage : ContentPage
     {
-        public ChatPage()
+        public ConversationPage()
         {
             InitializeComponent();
         }
 
-        private async void NameClicked(object sender, EventArgs e)
+        private async void BackEvent(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ConversationPage());
+            await Navigation.PopAsync();
         }
     }
 }

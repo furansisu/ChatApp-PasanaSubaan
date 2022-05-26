@@ -5,6 +5,7 @@
             xmlns:local="clr-namespace:ChatApp_PasanaSubaan"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            NavigationPage.HasNavigationBar="False"
             BarBackground="DeepPink"
             SelectedTabColor="White"
             UnselectedTabColor="Gray"

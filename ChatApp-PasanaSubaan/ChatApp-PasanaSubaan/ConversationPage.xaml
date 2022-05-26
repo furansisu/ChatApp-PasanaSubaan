@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ChatApp_PasanaSubaan.ConversationPage"
+             Title="Chat"
+             IconImageSource="ChatIcon.png">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,0.05"
+                  AbsoluteLayout.LayoutFlags="All">
+                <Label
+                HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                Text="NAME"
+                TextColor="DimGray"/>
+                <Button
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    Text="X"
+                    FontAttributes="Bold"
+                    FontSize="Default"
+                    HorizontalOptions="End"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="BackEvent"></Button>
+            </Grid>
+
+            <ScrollView>
+                <StackLayout>
+                    <Frame
+                        HorizontalOptions="End"
+                        Padding="8"
+                        CornerRadius="10"
+                        BackgroundColor="DeepPink">
+                        <Label
+                            Text="Your text"
+                            TextColor="White"/>
+                    </Frame>
+
+                    <Frame
+                        HorizontalOptions="Start"
+                        Padding="8"
+                        CornerRadius="10"
+                        BackgroundColor="LightPink">
+                        <Label
+                            Text="Their text"
+                            TextColor="Black"/>
+                    </Frame>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Grid>
+                <Label
+                HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                Text="NAME"
+                TextColor="DimGray"/>
+                <Button
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    Text="X"
+                    FontAttributes="Bold"
+                    FontSize="Default"
+                    HorizontalOptions="End"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="BackEvent"></Button>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

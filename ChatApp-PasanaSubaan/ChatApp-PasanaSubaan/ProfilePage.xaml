@@ -1,14 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
              x:Class="ChatApp_PasanaSubaan.ProfilePage"
              Title="Profile"
              IconImageSource="ProfileIcon.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="You are in the profile page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <Grid ColumnDefinitions="*,279,*" 
+                RowDefinitions="*,168,0,*">
+                <Ellipse
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="168"
+                    HeightRequest="168"
+                    Stroke="DeepPink"
+                    StrokeThickness="4"
+                    Fill="Pink"/>
+                <Image Source="test.jpg"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    WidthRequest="150"   
+                    HeightRequest="150"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry
+                        Center="75,75"
+                        RadiusX="75"
+                        RadiusY="75"/>
+                    </Image.Clip>
+                </Image>
+                
+            </Grid>
+            <Label
+                Grid.Row="2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                Text="Your Name"
+                TextColor="DimGray"/>
+            <Label
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Text="your_email@google.com"
+                TextColor="DimGray"/>
+            <Button Text="Sign Out"
+                VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
