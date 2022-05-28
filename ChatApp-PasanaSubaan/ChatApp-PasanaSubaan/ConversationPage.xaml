@@ -7,7 +7,8 @@
              IconImageSource="ChatIcon.png">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand"
-                        HorizontalOptions="FillAndExpand">
+                        HorizontalOptions="FillAndExpand"
+                        Padding="10">
             <Grid AbsoluteLayout.LayoutBounds="0,0,1,0.05"
                   AbsoluteLayout.LayoutFlags="All">
                 <Label
@@ -29,7 +30,8 @@
                     Clicked="BackEvent"></Button>
             </Grid>
 
-            <ScrollView>
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0.35,1,0.825"
+                        AbsoluteLayout.LayoutFlags="All">
                 <StackLayout>
                     <Frame
                         HorizontalOptions="End"
@@ -54,18 +56,23 @@
                 </StackLayout>
             </ScrollView>
 
-            <Grid>
-                <Label
-                HorizontalOptions="StartAndExpand"
-                    VerticalOptions="Center"
-                FontSize="Large"
-                FontAttributes="Bold"
-                Text="NAME"
-                TextColor="DimGray"/>
+            <Grid AbsoluteLayout.LayoutBounds="0,1,1,0.1"
+                  AbsoluteLayout.LayoutFlags="All"
+                  Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Editor Placeholder="Type message here.."
+                        PlaceholderColor="Gray"
+                        MaxLength="240"
+                        AutoSize="TextChanges"
+                        Grid.Column="0"></Editor>
                 <Button
-                    WidthRequest="40"
-                    HeightRequest="40"
-                    Text="X"
+                    Grid.Column="1"
+                    WidthRequest="80"
+                    HeightRequest="20"
+                    Text="Send"
                     FontAttributes="Bold"
                     FontSize="Default"
                     HorizontalOptions="End"

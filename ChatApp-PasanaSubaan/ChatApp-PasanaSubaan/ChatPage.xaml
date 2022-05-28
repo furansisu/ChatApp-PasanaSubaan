@@ -23,32 +23,35 @@
 
             </Frame>
 
-            <Frame
+            <ScrollView>
+                <StackLayout>
+                    <Frame
                 Padding="10"
                 CornerRadius="10"
                 BorderColor="Black"
                 IsClippedToBounds="True">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="NameClicked"/>
-                </Frame.GestureRecognizers>
-                <Grid Padding="1">
-                    <Label
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="NameClicked"/>
+                        </Frame.GestureRecognizers>
+                        <Grid Padding="1">
+                            <Label
                         Grid.Row="0"
                 VerticalOptions="Start"
                 FontSize="Medium"
                 FontAttributes="Bold"
                 Text="Your Name"
                 TextColor="DimGray"/>
-                    <Label
+                            <Label
                         Grid.Row="1"
                 VerticalOptions="Start"
                 FontSize="Small"
                 FontAttributes="Bold"
                 Text="your_email@google.com"
                 TextColor="DimGray"/>
-                </Grid>
-                
-            </Frame>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
