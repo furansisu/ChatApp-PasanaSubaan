@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Firebase;
 
 namespace ChatApp_PasanaSubaan.Droid
 {
@@ -13,6 +14,8 @@ namespace ChatApp_PasanaSubaan.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            FirebaseApp.InitializeApp(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

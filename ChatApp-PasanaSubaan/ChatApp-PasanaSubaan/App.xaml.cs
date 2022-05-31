@@ -10,6 +10,7 @@ namespace ChatApp_PasanaSubaan
         {
             InitializeComponent();
 
+
             MainPage = new NavigationPage(new TabbedPage1());
         }
 

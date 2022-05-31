@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "680492323444",
+    "project_id": "gachat-36635",
+    "storage_bucket": "gachat-36635.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680492323444:android:457d5ccc9482d386b33721",
+        "android_client_info": {
+          "package_name": "com.companyname.chatapp_pasanasubaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680492323444-8050at82gcljo5tpjqm9f60p2qu393sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ4EWAWRR6Q5NqwESSE2MHyeL6IQd5LEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680492323444-8050at82gcljo5tpjqm9f60p2qu393sm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
