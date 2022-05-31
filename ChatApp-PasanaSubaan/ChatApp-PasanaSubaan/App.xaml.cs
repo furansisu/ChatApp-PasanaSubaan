@@ -10,7 +10,7 @@ namespace ChatApp_PasanaSubaan
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TabbedPage1());
+            //MainPage = new NavigationPage(new TabbedPage1());
         }
 
         protected override void OnStart()

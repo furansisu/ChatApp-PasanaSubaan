@@ -1,12 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChatApp-PasanaSubaan.ForgotPassPage">
+             x:Class="ChatApp_PasanaSubaan.ForgotPassPage"
+             xmlns:local="clr-namespace:ChatApp_PasanaSubaan">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Frame x:Name="emailbox"
+                   BorderColor="black"
+                   Margin="0, 0, 0, 10"
+                   Padding="5"
+                   CornerRadius="5">
+                <local:CustomEntry x:Name="email" Placeholder="Email" Keyboard="Email" TextColor="black" PlaceholderColor="gray" Focused="email_Focused"/>
+            </Frame>
+            <Button
+                VerticalOptions="Center"
+                Text="Send Reset Password Email"
+                TextColor="white"
+                BackgroundColor="DeepPink"
+                CornerRadius="5"
+                Clicked="Send"
+             />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

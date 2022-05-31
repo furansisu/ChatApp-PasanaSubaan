@@ -1,12 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChatApp-PasanaSubaan.LoginPage">
+             x:Class="ChatApp_PasanaSubaan.LoginPage"
+             xmlns:local="clr-namespace:ChatApp_PasanaSubaan">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+
+            <Image Source="Logo.png" BackgroundColor="DeepPink"></Image>
+
+            <Frame x:Name="emailbox"
+                   BorderColor="black"
+                   Margin="5,20,5,0"
+                   Padding="10,5"
+                   CornerRadius="50">
+                <local:CustomEntry x:Name="email" Placeholder="Email" Keyboard="Email"  TextColor="black" PlaceholderColor="gray" Focused="email_Focused"/>
+            </Frame>
+            <Frame x:Name="passbox"
+                   BorderColor="black"
+                   Margin="5"
+                   Padding="10,5"
+                   CornerRadius="50">
+                <RelativeLayout Padding="0">
+                    <local:CustomEntry x:Name="pass" Placeholder="Password" IsPassword="true" TextColor="black" PlaceholderColor="gray" RelativeLayout.WidthConstraint="270" Focused="pass_Focused"/>
+                    <Button x:Name="hide" Text="Hide" TextColor="white" BackgroundColor="DeepPink" CornerRadius="50" RelativeLayout.XConstraint="270" RelativeLayout.HeightConstraint="45" Margin="5" Clicked="HidePass" IsVisible="false"/>
+                    <Button x:Name="show" Text="Show" TextColor="white" BackgroundColor="DeepPink" CornerRadius="50" RelativeLayout.XConstraint="270" RelativeLayout.HeightConstraint="45" Margin="5" Clicked="ShowPass" IsVisible="true"/>
+                </RelativeLayout>
+            </Frame>
+            <Label HorizontalOptions="End">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Forgot Password?" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ForgotPass"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button
+                VerticalOptions="Center"
+                Text="Sign in"
+                Margin="0,10,0,0"
+                TextColor="white"
+                BackgroundColor="DeepPink"
+                CornerRadius="5"
+                Clicked="SignIn"
+             />
+            <Button
+                VerticalOptions="Center"
+                Text="Create an account"
+                TextColor="white"
+                BackgroundColor="HotPink"
+                CornerRadius="5"
+                Clicked="SignUp"
+             />
+
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="━━━━━━━━━━━━━━━━━   or   ━━━━━━━━━━━━━━━━━" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <RelativeLayout Padding="5" HorizontalOptions="CenterAndExpand">
+                <Button
+                VerticalOptions="Center"
+                Text="Sign in with Google"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Gray"
+                BorderWidth="1"
+                CornerRadius="5"
+                RelativeLayout.WidthConstraint="190"
+                />
+                <Button
+                VerticalOptions="Center"
+                Text="Sign in with Facebook"
+                TextColor="white"
+                BackgroundColor="Blue"
+                CornerRadius="5"
+                RelativeLayout.XConstraint="200"
+                />
+            </RelativeLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

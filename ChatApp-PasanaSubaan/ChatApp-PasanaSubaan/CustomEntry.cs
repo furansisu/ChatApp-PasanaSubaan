@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
-namespace ChatApp-PasanaSubaan
+namespace ChatApp_PasanaSubaan
 {
-    class CustomEntry
-{
-}
+    public class CustomEntry : Entry
+    {
+    }
 }
