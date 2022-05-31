@@ -52,7 +52,8 @@
                 Text="your_email@google.com"
                 TextColor="DimGray"/>
             <Button Text="Sign Out"
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
