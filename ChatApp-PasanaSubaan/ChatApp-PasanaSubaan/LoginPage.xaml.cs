@@ -34,7 +34,7 @@ namespace ChatApp_PasanaSubaan
             }
             else
             {
-                Application.Current.MainPage = new TabbedPage1();
+                Application.Current.MainPage = new NavigationPage(new TabbedPage1());
             }
         }
 
