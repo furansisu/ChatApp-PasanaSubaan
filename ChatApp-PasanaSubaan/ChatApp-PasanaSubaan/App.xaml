@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChatApp_PasanaSubaan" xmlns:local1="clr-namespace:ChatApp_PasanaSubaan.Models"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
-             x:Class="ChatApp_PasanaSubaan.App"
-             xmlns:local="clr-namespace:ChatApp_PasanaSubaan;">
+             x:Class="ChatApp_PasanaSubaan.App">
     <Application.Resources>
         <ResourceDictionary>
-            <local:IsOwnerConverter x:Key="isOwnerConverter"/>
-            <local:IsViewerConverter x:Key="isViewerConverter"/>
+            <local1:IsOwnerConverter x:Key="isOwnerConverter"/>
+            <local1:IsViewerConverter x:Key="isViewerConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

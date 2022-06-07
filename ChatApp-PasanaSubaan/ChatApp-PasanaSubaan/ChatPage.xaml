@@ -19,39 +19,59 @@
                    PlaceholderColor="Gray"
                    TextColor="Black"
                    TextTransform="Lowercase"
-                   FontSize="Medium"/>
+                   FontSize="Medium"
+                   SearchButtonPressed="Search"
+                   x:Name="searchBar"/>
 
             </Frame>
+            <Label x:Name="loading" Text="Loading.." IsVisible="False"/>
+            <Label x:Name="emptyListLabel" Text="You have no contacts as of the moment." IsVisible="False"/>
+            <ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="true" x:Name="contactsList" ItemTapped="ContactsList_ItemTapped"
+                      SeparatorVisibility="None" Margin="5,5,5,0"
+                      IsVisible="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="60">
+                                <Frame
+                                        Padding="10"
+                                        CornerRadius="10"
+                                        BorderColor="Black"
+                                        IsClippedToBounds="True">
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="Frame" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                            <Setter Property="BorderColor" Value="LightGreen"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5"/>
+                                            <RowDefinition Height="5"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding contactName[0]}" Margin="5,0,0,0" Grid.Row="0" Grid.Column="0"
+                                                   HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="End" FontSize="Large">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="true">
+                                                    <Setter Property="Text" Value="{Binding contactName[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Label Text="{Binding contactEmail[0]}" Margin="5,0,0,0" Grid.Row="1" Grid.Column="0"
+                                                   HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Medium">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding contactEmail[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </Grid>
 
-            <ScrollView>
-                <StackLayout>
-                    <Frame
-                Padding="10"
-                CornerRadius="10"
-                BorderColor="Black"
-                IsClippedToBounds="True">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="NameClicked"/>
-                        </Frame.GestureRecognizers>
-                        <Grid Padding="1">
-                            <Label
-                        Grid.Row="0"
-                VerticalOptions="Start"
-                FontSize="Medium"
-                FontAttributes="Bold"
-                Text="Your Name"
-                TextColor="DimGray"/>
-                            <Label
-                        Grid.Row="1"
-                VerticalOptions="Start"
-                FontSize="Small"
-                FontAttributes="Bold"
-                Text="your_email@google.com"
-                TextColor="DimGray"/>
-                        </Grid>
-                    </Frame>
-                </StackLayout>
-            </ScrollView>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
