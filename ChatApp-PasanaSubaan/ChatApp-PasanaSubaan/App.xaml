@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
-             x:Class="ChatApp_PasanaSubaan.App">
+             x:Class="ChatApp_PasanaSubaan.App"
+             xmlns:local="clr-namespace:ChatApp_PasanaSubaan;">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <local:IsOwnerConverter x:Key="isOwnerConverter"/>
+            <local:IsViewerConverter x:Key="isViewerConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

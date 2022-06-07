@@ -5,16 +5,14 @@ using System.Runtime.CompilerServices;
 
 namespace ChatApp_PasanaSubaan.Models
 {
-    public class UserModel : INotifyPropertyChanged
+    public class ConversationModel : INotifyPropertyChanged
     {
-        string _uid { get; set; }
-        public string uid { get { return _uid; } set { _uid = value; OnPropertyChanged(nameof(uid)); } }
-        string _email { get; set; }
-        public string email { get { return _email; } set { _email = value; OnPropertyChanged(nameof(email)); } }
-        string _name { get; set; }
-        public string name { get { return _name; } set { _name = value; OnPropertyChanged(nameof(name)); } }
-        int _userType { get; set; }
-        public int userType { get { return _userType; } set { _userType = value; OnPropertyChanged(nameof(userType)); } }
+        string _id { get; set; }
+        public string id { get { return _id; } set { _id = value; OnPropertyChanged(nameof(id)); } }
+        string _message { get; set; }
+        public string message { get { return _message; } set { _message = value; OnPropertyChanged(nameof(message)); } }
+        string _converseeID { get; set; }
+        public string converseeID { get { return _converseeID; } set { _converseeID = value; OnPropertyChanged(nameof(converseeID)); } }
         DateTime _created_at { get; set; }
         public DateTime created_at { get { return _created_at; } set { _created_at = value; OnPropertyChanged(nameof(created_at)); } }
         List<string> _contacts { get; set; }
