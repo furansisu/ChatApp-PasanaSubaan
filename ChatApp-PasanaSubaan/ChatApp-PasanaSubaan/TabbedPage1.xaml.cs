@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatApp_PasanaSubaan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,12 @@ namespace ChatApp_PasanaSubaan
 {
     public partial class TabbedPage1 : TabbedPage
     {
+        DataClass dataClass = DataClass.GetInstance;
         public TabbedPage1()
         {
             InitializeComponent();
+            //ProfilePage.name = dataClass.loggedInUser.name;
+            //ProfilePage.email = dataClass.loggedInUser.email;
         }
     }
 }

@@ -10,8 +10,16 @@ namespace ChatApp_PasanaSubaan
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new TabbedPage1());
-            MainPage = new NavigationPage(new LoginPage());
+            //if (dataClass.isSignedIn)
+            //{
+            //    Application.Current.MainPage = new TabbedPage1();
+            //}
+            //else
+            //{
+                MainPage = new NavigationPage(new LoginPage());
+            //}
+            
+            
         }
 
         protected override void OnStart()
