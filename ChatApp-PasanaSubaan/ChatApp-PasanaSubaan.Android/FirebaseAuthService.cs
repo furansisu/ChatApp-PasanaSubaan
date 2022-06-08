@@ -157,6 +157,4 @@ namespace ChatApp_PasanaSubaan.Droid
         }
     }
 
-    }
-    }
-}
+ }
