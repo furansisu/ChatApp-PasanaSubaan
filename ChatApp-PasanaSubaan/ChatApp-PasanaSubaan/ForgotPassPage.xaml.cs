@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChatApp_PasanaSubaan.DependencyServices;
+using ChatApp_PasanaSubaan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,17 +19,27 @@ namespace ChatApp_PasanaSubaan
             InitializeComponent();
         }
 
-        private void Send(object sender, EventArgs e)
+        private async void Send(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(email.Text))
             {
-                DisplayAlert("Error", "Missing field", "Okay");
+                await DisplayAlert("Error", "Missing field", "Okay");
                 emailbox.BorderColor = Color.Red;
             }
             else
             {
-                DisplayAlert("Success", "Email has been sent to your email address.", "Okay");
-                Application.Current.MainPage = new LoginPage();
+                FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
+                res = await DependencyService.Get<iFirebaseAuth>().ResetPassword(email.Text);
+
+                if (res.Status == true)
+                {
+                    await DisplayAlert("Success", "Email has been sent to your email address.", "Okay");
+                    Application.Current.MainPage = new LoginPage();
+                }
+                else
+                {
+                    await DisplayAlert("Error", res.Response, "Okay");
+                }
             }
         }
 

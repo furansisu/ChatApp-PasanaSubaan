@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChatApp_PasanaSubaan.DependencyServices;
+using ChatApp_PasanaSubaan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,19 @@ public partial class ProfilePage : ContentPage
         InitializeComponent();
     }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new LoginPage();
+            FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
+            res = DependencyService.Get<iFirebaseAuth>().SignOut();
+
+            if (res.Status == true)
+            {
+                Application.Current.MainPage = new LoginPage();
+            }
+            else
+            {
+                await DisplayAlert("Error", res.Response, "Okay");
+            }
         }
     }
 }

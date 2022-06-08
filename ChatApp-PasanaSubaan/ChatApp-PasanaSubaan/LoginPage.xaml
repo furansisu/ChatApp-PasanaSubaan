@@ -13,7 +13,7 @@
                    Margin="5,20,5,0"
                    Padding="10,5"
                    CornerRadius="50">
-                <local:CustomEntry x:Name="email" Placeholder="Email" Keyboard="Email"  TextColor="black" PlaceholderColor="gray" Focused="email_Focused"/>
+                <local:CustomEntry x:Name="email" Placeholder="Email" Keyboard="Email" Text="{Binding email}" TextColor="black" PlaceholderColor="gray" Focused="email_Focused"/>
             </Frame>
             <Frame x:Name="passbox"
                    BorderColor="black"
@@ -21,7 +21,7 @@
                    Padding="10,5"
                    CornerRadius="50">
                 <RelativeLayout Padding="0">
-                    <local:CustomEntry x:Name="pass" Placeholder="Password" IsPassword="true" TextColor="black" PlaceholderColor="gray" RelativeLayout.WidthConstraint="270" Focused="pass_Focused"/>
+                    <local:CustomEntry x:Name="pass" Placeholder="Password" Text="{Binding email}" IsPassword="true" TextColor="black" PlaceholderColor="gray" RelativeLayout.WidthConstraint="270" Focused="pass_Focused"/>
                     <Button x:Name="hide" Text="Hide" TextColor="white" BackgroundColor="DeepPink" CornerRadius="50" RelativeLayout.XConstraint="270" RelativeLayout.HeightConstraint="45" Margin="5" Clicked="HidePass" IsVisible="false"/>
                     <Button x:Name="show" Text="Show" TextColor="white" BackgroundColor="DeepPink" CornerRadius="50" RelativeLayout.XConstraint="270" RelativeLayout.HeightConstraint="45" Margin="5" Clicked="ShowPass" IsVisible="true"/>
                 </RelativeLayout>

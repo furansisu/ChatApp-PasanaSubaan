@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ChatApp_PasanaSubaan.DependencyServices;
+using ChatApp_PasanaSubaan.Models;
+using Plugin.CloudFirestore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +15,17 @@ namespace ChatApp_PasanaSubaan
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
+        DataClass dataClass = DataClass.GetInstance;
         public RegisterPage()
         {
             InitializeComponent();
         }
 
-        private void Register(object sender, EventArgs e)
+        private async void Register(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(email.Text) || string.IsNullOrEmpty(pass.Text) || string.IsNullOrEmpty(cpass.Text))
             {
-                DisplayAlert("Error", "Missing fields", "Okay");
+                await DisplayAlert("Error", "Missing fields", "Okay");
 
                 if (string.IsNullOrEmpty(username.Text))
                 {
@@ -42,13 +46,36 @@ namespace ChatApp_PasanaSubaan
             }
             else if (pass.Text != cpass.Text)
             {
-                DisplayAlert("Error", "Passwords don't match.", "Okay");
+                await DisplayAlert("Error", "Passwords don't match.", "Okay");
             }
             else
             {
-                DisplayAlert("Success", "Sign up successful. Verification email sent.", "Okay");
-                Application.Current.MainPage = new LoginPage();
-            }
+                FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
+                res = await DependencyService.Get<iFirebaseAuth>().SignUpWithEmailPassword(username.Text, email.Text, pass.Text);
+
+                if (res.Status == true)
+                {
+                    try
+                    {
+                        await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("users")
+                         .GetDocument(dataClass.loggedInUser.uid)
+                         .SetDataAsync(dataClass.loggedInUser);
+
+                        await DisplayAlert("Success", res.Response, "Okay");
+                        await Navigation.PopModalAsync(true);
+                    }
+                    catch (Exception ex)
+                    {
+                        await DisplayAlert("Error", ex.Message, "Okay");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Error", res.Response, "Okay");
+                }
+        }
         }
 
         private void SignIn(object sender, EventArgs e)
